@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint . && prettier-eslint --lint-different **/*.js",
-    "format": "prettier-eslint --write **/*.js"
+    "format": "prettier-eslint --write $PWD/'src/**/*.[jt]s?(x)'"
   },
   "author": "",
   "license": "ISC",
