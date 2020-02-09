@@ -1,23 +1,22 @@
 module.exports = {
-    plugins: ['react'],
-    extends: ['eslint:recommended'],
+    plugins: ['react', 'prettier'],
+    extends: ['eslint:recommended', 'plugin:prettier/recommended'],
     parserOptions: {
         ecmaVersion: 6,
-        sourceType: "module",
+        sourceType: 'module',
         ecmaFeatures: {
             jsx: true,
-        }
+        },
     },
     env: {
         node: true,
     },
     rules: {
-        quotes: ['error', 'single', {avoidEscape: true}],
-        'comma-dangle': ['error', 'always-multiline'],
+        'prettier/prettier': 'error',
     },
     settings: {
         react: {
-            version: '16.12.0'
+            version: '16.12.0',
         },
     },
-};
+}
