@@ -2,8 +2,8 @@ import React from 'react'
 
 const TeamFlag = () => (
     <div>
-        <image></image>
-        <label></label>
+        <label />
+        <label />
     </div>
 )
 
