@@ -9,6 +9,9 @@
     "lint": "eslint **/*.js",
     "format": "prettier --write **/*.js"
   },
+  "jest": {
+    "setupFilesAfterEnv": ["./src/tests/jestSetup.js"]
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {

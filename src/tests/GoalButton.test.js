@@ -1,17 +1,13 @@
 import React from 'react'
-import { configure, shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
-import TeamScore from '../main/GoalButton'
+import Enzyme from 'enzyme'
 import GoalButton from '../main/GoalButton'
-
-configure({ adapter: new Adapter() })
 
 describe('Goal Button', () => {
     const text = 'Button text'
     let wrapper
 
     beforeEach(() => {
-        wrapper = shallow(<GoalButton>{text}</GoalButton>)
+        wrapper = Enzyme.shallow(<GoalButton>{text}</GoalButton>)
     })
 
     it('renders a <butto>', () => {
