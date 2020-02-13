@@ -1,6 +1,6 @@
 import React from 'react'
 import Enzyme from 'enzyme'
-import TeamScore from '../main/TeamScore'
+import TeamScore from '../src/components/TeamScore'
 
 describe('Team Score', () => {
     let wrapper

@@ -1,6 +1,6 @@
 import React from 'react'
 import Enzyme from 'enzyme'
-import GoalButton from '../main/GoalButton'
+import GoalButton from '../src/components/GoalButton'
 
 describe('Goal Button', () => {
     const text = 'Button text'

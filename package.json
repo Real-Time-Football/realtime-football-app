@@ -11,7 +11,7 @@
   },
   "jest": {
     "setupFilesAfterEnv": [
-      "./src/tests/jestSetup.js"
+      "./tests/jestSetup.js"
     ]
   },
   "author": "",
