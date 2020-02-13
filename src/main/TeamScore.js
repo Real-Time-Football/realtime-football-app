@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const TeamFlag = ({ teamName }) => (
-    <div>
-        <div>{teamName}</div>
-        <div></div>
+const TeamFlag = ({ teamDescription, score, ...rest }) => (
+    <div {...rest}>
+        <div>{teamDescription}</div>
+        <div>{score}</div>
     </div>
 )
 
 TeamFlag.propTypes = {
-    teamName: PropTypes.string.isRequired,
+    teamDescription: PropTypes.string.isRequired,
+    score: PropTypes.number,
 }
 
 export default TeamFlag

@@ -5,13 +5,7 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:prettier/recommended',
     ],
-    parserOptions: {
-        ecmaVersion: 6,
-        sourceType: 'module',
-        ecmaFeatures: {
-            jsx: true,
-        },
-    },
+    parser: 'babel-eslint',
     env: {
         node: true,
     },

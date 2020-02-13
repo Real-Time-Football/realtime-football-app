@@ -21,10 +21,10 @@ describe('Goal Button', () => {
     it('passes other props through to the <button>', () => {
         const onClick = () => {}
         const className = 'goal-button'
-        const dataTeam = 'home'
-        wrapper.setProps({ onClick, className, 'data-team': dataTeam })
+        const dataTeamSide = 'home'
+        wrapper.setProps({ onClick, className, 'data-team-side': dataTeamSide })
         expect(wrapper.prop('onClick')).toBe(onClick)
         expect(wrapper.prop('className')).toBe(className)
-        expect(wrapper.prop('data-team')).toBe(dataTeam)
+        expect(wrapper.prop('data-team-side')).toBe(dataTeamSide)
     })
 })
