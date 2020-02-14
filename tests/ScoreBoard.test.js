@@ -2,7 +2,6 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import ScoreBoard from '../src/components/ScoreBoard'
 import GoalButton from '../src/components/GoalButton'
-import TeamScore from '../src/components/TeamScore'
 
 describe('Score Board', () => {
     let wrapper
