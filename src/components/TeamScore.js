@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const TeamFlag = ({ teamDescription, score, ...rest }) => (
+const TeamScore = ({ teamDescription, score = 0, ...rest }) => (
     <div {...rest}>
         <div>{teamDescription}</div>
         <div>{score}</div>
     </div>
 )
 
-TeamFlag.propTypes = {
+TeamScore.propTypes = {
     teamDescription: PropTypes.string.isRequired,
     score: PropTypes.number,
 }
 
-export default TeamFlag
+export default TeamScore

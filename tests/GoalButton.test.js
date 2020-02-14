@@ -10,7 +10,7 @@ describe('Goal Button', () => {
         wrapper = Enzyme.shallow(<GoalButton>{text}</GoalButton>)
     })
 
-    it('renders a <butto>', () => {
+    it('renders a <button>', () => {
         expect(wrapper.type()).toBe('button')
     })
 
@@ -21,10 +21,10 @@ describe('Goal Button', () => {
     it('passes other props through to the <button>', () => {
         const onClick = () => {}
         const className = 'goal-button'
-        const dataTeamSide = 'home'
-        wrapper.setProps({ onClick, className, 'data-team-side': dataTeamSide })
+        const dataTeamType = 'home'
+        wrapper.setProps({ onClick, className, 'data-team-type': dataTeamType })
         expect(wrapper.prop('onClick')).toBe(onClick)
         expect(wrapper.prop('className')).toBe(className)
-        expect(wrapper.prop('data-team-side')).toBe(dataTeamSide)
+        expect(wrapper.prop('data-team-type')).toBe(dataTeamType)
     })
 })
