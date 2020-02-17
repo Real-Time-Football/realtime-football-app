@@ -1,8 +1,16 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     mode: 'development',
     entry: {
-        carousel: './src/ScoreBoard.js',
+        scoreboard: './src/components/ScoreBoard.js',
+        page: './src/pages/index.js',
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Score Board Page',
+            chuncks: ['page'],
+        }),
+    ],
     module: {
         rules: [
             {
