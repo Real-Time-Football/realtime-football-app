@@ -22,6 +22,7 @@ class ScoreBoard extends React.PureComponent {
         return (
             <div>
                 <div>
+                    <p>hello </p>
                     <TeamScore
                         data-team-type={'home'}
                         teamDescription={'Home'}
