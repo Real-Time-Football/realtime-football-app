@@ -1,5 +1,5 @@
 import React from 'react'
-import Enzyme from 'enzyme'
+import Enzyme, { mount } from 'enzyme'
 import GoalButton from '../src/components/GoalButton'
 
 describe('Goal Button', () => {
@@ -11,7 +11,8 @@ describe('Goal Button', () => {
     })
 
     it('renders a <button>', () => {
-        expect(wrapper.type()).toBe('button')
+        const mounted = Enzyme.mount(<GoalButton data-team-type={'home'}>{text}</GoalButton>)
+        expect(mounted.containsMatchingElement(<button data-team-type={'home'}>{text}</button>)).toBe(true)
     })
 
     it('passes `children` to through the <button>', () => {
