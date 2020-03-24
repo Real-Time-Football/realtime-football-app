@@ -1,5 +1,5 @@
 import React from 'react'
-import Enzyme, { mount } from 'enzyme'
+import Enzyme from 'enzyme'
 import GoalButton from '../src/components/GoalButton'
 
 describe('Goal Button', () => {
@@ -8,11 +8,6 @@ describe('Goal Button', () => {
 
     beforeEach(() => {
         wrapper = Enzyme.shallow(<GoalButton>{text}</GoalButton>)
-    })
-
-    it('renders a <button>', () => {
-        const mounted = Enzyme.mount(<GoalButton data-team-type={'home'}>{text}</GoalButton>)
-        expect(mounted.containsMatchingElement(<button data-team-type={'home'}>{text}</button>)).toBe(true)
     })
 
     it('passes `children` to through the <button>', () => {
@@ -27,5 +22,30 @@ describe('Goal Button', () => {
         expect(wrapper.prop('onClick')).toBe(onClick)
         expect(wrapper.prop('className')).toBe(className)
         expect(wrapper.prop('data-team-type')).toBe(dataTeamType)
+    })
+
+    it('renders correctly', () => {
+        wrapper.setProps({
+            'data-team-type': 'home',
+        })
+
+        expect(wrapper).toMatchSnapshot()
+    })
+})
+
+describe('Button', () => {
+    let mounted
+
+    beforeEach(() => {
+        const Button = GoalButton.defaultProps.Button
+        mounted = Enzyme.mount(<Button data-team-type={'home'}></Button>)
+    })
+
+    // it('has the expected static styles', () => {
+    //     expect(mounted).toHaveStyleRule('color', 'white')
+    // })
+
+    it('renders correctly', () => {
+        expect(mounted).toMatchSnapshot()
     })
 })
