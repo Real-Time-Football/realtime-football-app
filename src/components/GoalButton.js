@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const DefaultButton = styled.button`
-    background-color: #4caf50;
+    background-color: #c70039;
     border: none;
     color: white;
     padding: 15px 32px;

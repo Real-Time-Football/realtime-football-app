@@ -2,7 +2,7 @@
 
 exports[`Button renders correctly 1`] = `
 .c0 {
-  background-color: #4caf50;
+  background-color: #c70039;
   border: none;
   color: white;
   padding: 15px 32px;
