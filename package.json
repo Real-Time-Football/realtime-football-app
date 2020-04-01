@@ -11,7 +11,9 @@
     "lint": "npm run lint:js && npm run lint:css",
     "format": "prettier --write **/*.js",
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack-dev-server --config webpack.config.js --open"
+    "dev": "webpack-dev-server --config webpack.config.js --open",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "setupFilesAfterEnv": [
@@ -33,6 +35,10 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/react": "^5.3.18",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
