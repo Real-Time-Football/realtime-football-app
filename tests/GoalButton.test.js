@@ -41,10 +41,6 @@ describe('Button', () => {
         mounted = Enzyme.mount(<Button data-team-type={'home'}></Button>)
     })
 
-    // it('has the expected static styles', () => {
-    //     expect(mounted).toHaveStyleRule('color', 'white')
-    // })
-
     it('renders correctly', () => {
         expect(mounted).toMatchSnapshot()
     })
