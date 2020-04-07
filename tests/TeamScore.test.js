@@ -4,42 +4,39 @@ import TeamScore from '../src/components/TeamScore'
 
 describe('Team Score', () => {
     let wrapper
-    const teamDescription = 'Home'
+    const team = 'Sao Paulo'
+    const side = 'HOME'
 
     beforeEach(() => {
-        wrapper = Enzyme.shallow(<TeamScore teamDescription={teamDescription} score={0} />)
+        wrapper = Enzyme.shallow(<TeamScore team={team} side={side} />)
     })
 
-    it('renders a <div> with two <label> elements', () => {
-        expect(wrapper.type()).toBe('div')
+    it('renders an <article> element', () => {
+        expect(wrapper.type()).toBe('article')
     })
 
-    it('renders a two <div> as children', () => {
-        expect(wrapper.childAt(0).type()).toBe('div')
-        expect(wrapper.childAt(1).type()).toBe('div')
+    it('renders a <header>, an <aside> and a <div> as children', () => {
+        expect(wrapper.childAt(0).type()).toBe('header')
+        expect(wrapper.childAt(1).type()).toBe('aside')
+        expect(wrapper.childAt(2).type()).toBe('div')
     })
 
-    it('passes `teamName` through to the first <div>', () => {
-        expect(wrapper.childAt(0).text()).toBe(teamDescription)
+    it('passes `team` through to the <header>', () => {
+        expect(wrapper.childAt(0).text()).toBe(team)
     })
 
-    it('passes `score` through to the second <div>', () => {
+    it('passes `score` through to the <div>', () => {
         const score = 1
         wrapper.setProps({ score })
-        expect(wrapper.childAt(1).text()).toBe('1')
-    })
-
-    it('passes other props through to the <div>', () => {
-        const className = 'team-score'
-        const style = {}
-        const dataTeamType = 'home'
-        wrapper.setProps({ className, style, 'data-team-type': dataTeamType })
-        expect(wrapper.prop('className')).toBe(className)
-        expect(wrapper.prop('style')).toBe(style)
-        expect(wrapper.prop('data-team-type')).toBe(dataTeamType)
+        expect(wrapper.childAt(2).text()).toBe('1')
     })
 
     it('has a initial `score` of 0', () => {
-        expect(wrapper.childAt(1).text()).toBe('0')
+        expect(wrapper.childAt(2).text()).toBe('0')
+    })
+
+    it('renders correctly', () => {
+        let mounted = Enzyme.mount(<TeamScore team={team} side={side} />)
+        expect(mounted).toMatchSnapshot()
     })
 })

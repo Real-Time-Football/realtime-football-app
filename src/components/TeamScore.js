@@ -1,16 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const TeamScore = ({ teamDescription, score = 0, ...rest }) => (
-    <div {...rest}>
-        <div>{teamDescription}</div>
+const TeamScore = ({ team, score = 0, side }) => (
+    <article data-side={side}>
+        <header>{team}</header>
+        <aside></aside>
         <div>{score}</div>
-    </div>
+    </article>
 )
 
 TeamScore.propTypes = {
-    teamDescription: PropTypes.string.isRequired,
+    team: PropTypes.string.isRequired,
     score: PropTypes.number,
+    side: PropTypes.string.isRequired,
 }
 
 export default TeamScore

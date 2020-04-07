@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Team Score renders correctly 1`] = `
+<TeamScore
+  side="HOME"
+  team="Sao Paulo"
+>
+  <article
+    data-side="HOME"
+  >
+    <header>
+      Sao Paulo
+    </header>
+    <aside />
+    <div>
+      0
+    </div>
+  </article>
+</TeamScore>
+`;

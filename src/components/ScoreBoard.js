@@ -20,29 +20,16 @@ class ScoreBoard extends React.PureComponent {
 
     render() {
         return (
-            <div>
-                <div>
-                    <p>hello </p>
-                    <TeamScore
-                        data-team-type={'home'}
-                        teamDescription={'Home'}
-                        score={this.state.scoreHome}
-                    ></TeamScore>
-                    <TeamScore
-                        data-team-type={'visitors'}
-                        teamDescription={'Visitors'}
-                        score={this.state.scoreVisitors}
-                    ></TeamScore>
-                </div>
-                <div>
-                    <GoalButton data-team-type={'home'} onClick={this.handleGoalHomeClick}>
-                        Goal Home
-                    </GoalButton>
-                    <GoalButton data-team-type={'visitors'} onClick={this.handleGoalVisitorsClick}>
-                        Goal Visitors
-                    </GoalButton>
-                </div>
-            </div>
+            <section>
+                <article>
+                    <TeamScore side={'HOME'} team={'Home'} score={this.state.scoreHome}></TeamScore>
+                    <TeamScore side={'VISITORS'} team={'Visitors'} score={this.state.scoreVisitors}></TeamScore>
+                </article>
+                <article>
+                    <GoalButton onClick={this.handleGoalHomeClick}>Goal Home</GoalButton>
+                    <GoalButton onClick={this.handleGoalVisitorsClick}>Goal Visitors</GoalButton>
+                </article>
+            </section>
         )
     }
 }

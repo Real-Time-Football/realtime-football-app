@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import Enzyme from 'enzyme'
 import ScoreBoard from '../src/components/ScoreBoard'
 import GoalButton from '../src/components/GoalButton'
 
@@ -7,11 +7,11 @@ describe('Score Board', () => {
     let wrapper
 
     beforeEach(() => {
-        wrapper = shallow(<ScoreBoard></ScoreBoard>)
+        wrapper = Enzyme.shallow(<ScoreBoard></ScoreBoard>)
     })
 
-    it('render a <div>', () => {
-        expect(wrapper.type()).toBe('div')
+    it('render a <section>', () => {
+        expect(wrapper.type()).toBe('section')
     })
 
     it('has a initial `scoreHome` of 0', () => {
@@ -41,24 +41,42 @@ describe('Score Board', () => {
     })
 
     it('increments `scoreHome` when GoalButton of home team is clicked', () => {
-        wrapper.find('GoalButton[data-team-type="home"]').simulate('click')
+        wrapper
+            .find('GoalButton')
+            .at(0)
+            .simulate('click')
         expect(wrapper.state('scoreHome')).toBe(1)
     })
 
     it('increments `scoreVisitors` when GoalButton of visitors team is clicked', () => {
-        wrapper.find('GoalButton[data-team-type="visitors"]').simulate('click')
+        wrapper
+            .find('GoalButton')
+            .at(1)
+            .simulate('click')
         expect(wrapper.state('scoreVisitors')).toBe(1)
     })
 
     it('renders the current score home in a TeamScore', () => {
         wrapper.setState({ scoreHome: 1 })
-        const teamHomeScore = wrapper.find('TeamScore[data-team-type="home"]').prop('score')
+        console.log(wrapper)
+        const teamHomeScore = wrapper
+            .find('TeamScore')
+            .at(0)
+            .prop('score')
         expect(teamHomeScore).toBe(1)
     })
 
     it('renders the current score visitors in a TeamScore', () => {
         wrapper.setState({ scoreVisitors: 2 })
-        const teamVisitorsScore = wrapper.find('TeamScore[data-team-type="visitors"]').prop('score')
+        const teamVisitorsScore = wrapper
+            .find('TeamScore')
+            .at(1)
+            .prop('score')
         expect(teamVisitorsScore).toBe(2)
+    })
+
+    it('renders correctly', () => {
+        let mounted = Enzyme.mount(<ScoreBoard></ScoreBoard>)
+        expect(mounted).toMatchSnapshot()
     })
 })
