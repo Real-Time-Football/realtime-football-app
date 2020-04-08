@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Score Board renders correctly 1`] = `
-.c0 {
+.c8 {
   background-color: #c70039;
   border: none;
   color: white;
@@ -14,44 +14,186 @@ exports[`Score Board renders correctly 1`] = `
   margin: 4px 2px;
 }
 
+.c3 {
+  height: 60px;
+  width: 60px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  font-size: 20px;
+  margin: 0 20px 0 0;
+}
+
+.c6 {
+  font-size: 20px;
+  margin: 0 0 0 20px;
+}
+
+.c4 {
+  font-size: 38px;
+  margin: 0 10px 0 40px;
+}
+
+.c7 {
+  font-size: 38px;
+  margin: 0 40px 0 10px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: Arial,Helvetica,sans-serif;
+  padding: 30px 0;
+}
+
 <ScoreBoard>
   <section>
-    <article>
-      <TeamScore
-        score={0}
-        side="HOME"
-        team="Home"
+    <ScoreBoard__ScoreContainer>
+      <article
+        className="c0"
       >
-        <article
-          data-side="HOME"
+        <TeamScore
+          score={0}
+          side="HOME"
+          team="São Paulo"
         >
-          <header>
-            Home
-          </header>
-          <aside />
-          <div>
-            0
-          </div>
-        </article>
-      </TeamScore>
-      <TeamScore
-        score={0}
-        side="VISITORS"
-        team="Visitors"
-      >
-        <article
-          data-side="VISITORS"
+          <TeamScore__TeamContainer
+            data-side="HOME"
+            reverse={false}
+          >
+            <article
+              className="c1"
+              data-side="HOME"
+            >
+              <TeamScore__TeamName
+                reverse={false}
+              >
+                <header
+                  className="c2"
+                >
+                  <h1>
+                    São Paulo
+                  </h1>
+                </header>
+              </TeamScore__TeamName>
+              <aside>
+                <TeamScore__TeamLogo
+                  className="team-logo"
+                  src="src/assets/images/logo-sao-paulo-256.png"
+                >
+                  <img
+                    className="c3 team-logo"
+                    src="src/assets/images/logo-sao-paulo-256.png"
+                  />
+                </TeamScore__TeamLogo>
+              </aside>
+              <TeamScore__Score
+                reverse={false}
+              >
+                <div
+                  className="c4"
+                >
+                  <strong>
+                    0
+                  </strong>
+                </div>
+              </TeamScore__Score>
+            </article>
+          </TeamScore__TeamContainer>
+        </TeamScore>
+        <div>
+          x
+        </div>
+        <TeamScore
+          reverse={true}
+          score={0}
+          side="VISITORS"
+          team="Santos"
         >
-          <header>
-            Visitors
-          </header>
-          <aside />
-          <div>
-            0
-          </div>
-        </article>
-      </TeamScore>
-    </article>
+          <TeamScore__TeamContainer
+            data-side="VISITORS"
+            reverse={true}
+          >
+            <article
+              className="c5"
+              data-side="VISITORS"
+            >
+              <TeamScore__TeamName
+                reverse={true}
+              >
+                <header
+                  className="c6"
+                >
+                  <h1>
+                    Santos
+                  </h1>
+                </header>
+              </TeamScore__TeamName>
+              <aside>
+                <TeamScore__TeamLogo
+                  className="team-logo"
+                  src="src/assets/images/logo-sao-paulo-256.png"
+                >
+                  <img
+                    className="c3 team-logo"
+                    src="src/assets/images/logo-sao-paulo-256.png"
+                  />
+                </TeamScore__TeamLogo>
+              </aside>
+              <TeamScore__Score
+                reverse={true}
+              >
+                <div
+                  className="c7"
+                >
+                  <strong>
+                    0
+                  </strong>
+                </div>
+              </TeamScore__Score>
+            </article>
+          </TeamScore__TeamContainer>
+        </TeamScore>
+      </article>
+    </ScoreBoard__ScoreContainer>
     <article>
       <GoalButton
         Button={
@@ -83,7 +225,7 @@ exports[`Score Board renders correctly 1`] = `
           onClick={[Function]}
         >
           <button
-            className="c0"
+            className="c8"
             onClick={[Function]}
           >
             Goal Home
@@ -120,7 +262,7 @@ exports[`Score Board renders correctly 1`] = `
           onClick={[Function]}
         >
           <button
-            className="c0"
+            className="c8"
             onClick={[Function]}
           >
             Goal Visitors

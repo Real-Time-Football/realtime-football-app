@@ -11,16 +11,6 @@ describe('Team Score', () => {
         wrapper = Enzyme.shallow(<TeamScore team={team} side={side} />)
     })
 
-    it('renders an <article> element', () => {
-        expect(wrapper.type()).toBe('article')
-    })
-
-    it('renders a <header>, an <aside> and a <div> as children', () => {
-        expect(wrapper.childAt(0).type()).toBe('header')
-        expect(wrapper.childAt(1).type()).toBe('aside')
-        expect(wrapper.childAt(2).type()).toBe('div')
-    })
-
     it('passes `team` through to the <header>', () => {
         expect(wrapper.childAt(0).text()).toBe(team)
     })
@@ -33,6 +23,12 @@ describe('Team Score', () => {
 
     it('has a initial `score` of 0', () => {
         expect(wrapper.childAt(2).text()).toBe('0')
+    })
+
+    it('render a <image> with team logo', () => {
+        let mounted = Enzyme.mount(<TeamScore team={team} side={side} />)
+        const imgUrl = 'src/assets/images/logo-sao-paulo-256.png'
+        expect(mounted.find('img').prop('src')).toBe(imgUrl)
     })
 
     it('renders correctly', () => {

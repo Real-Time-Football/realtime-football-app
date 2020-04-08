@@ -1,20 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Team Score renders correctly 1`] = `
+.c2 {
+  height: 60px;
+  width: 60px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  font-size: 20px;
+  margin: 0 20px 0 0;
+}
+
+.c3 {
+  font-size: 38px;
+  margin: 0 10px 0 40px;
+}
+
 <TeamScore
   side="HOME"
   team="Sao Paulo"
 >
-  <article
+  <TeamScore__TeamContainer
     data-side="HOME"
+    reverse={false}
   >
-    <header>
-      Sao Paulo
-    </header>
-    <aside />
-    <div>
-      0
-    </div>
-  </article>
+    <article
+      className="c0"
+      data-side="HOME"
+    >
+      <TeamScore__TeamName
+        reverse={false}
+      >
+        <header
+          className="c1"
+        >
+          <h1>
+            Sao Paulo
+          </h1>
+        </header>
+      </TeamScore__TeamName>
+      <aside>
+        <TeamScore__TeamLogo
+          className="team-logo"
+          src="src/assets/images/logo-sao-paulo-256.png"
+        >
+          <img
+            className="c2 team-logo"
+            src="src/assets/images/logo-sao-paulo-256.png"
+          />
+        </TeamScore__TeamLogo>
+      </aside>
+      <TeamScore__Score
+        reverse={false}
+      >
+        <div
+          className="c3"
+        >
+          <strong>
+            0
+          </strong>
+        </div>
+      </TeamScore__Score>
+    </article>
+  </TeamScore__TeamContainer>
 </TeamScore>
 `;
