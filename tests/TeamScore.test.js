@@ -4,7 +4,7 @@ import TeamScore from '../src/components/TeamScore'
 
 describe('Team Score', () => {
     let wrapper
-    const team = 'Sao Paulo'
+    const team = 'São Paulo'
     const side = 'HOME'
 
     beforeEach(() => {

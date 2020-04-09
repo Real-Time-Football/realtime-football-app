@@ -170,11 +170,11 @@ exports[`Score Board renders correctly 1`] = `
               <aside>
                 <TeamScore__TeamLogo
                   className="team-logo"
-                  src="src/assets/images/logo-sao-paulo-256.png"
+                  src="src/assets/images/logo-santos-256.png"
                 >
                   <img
                     className="c3 team-logo"
-                    src="src/assets/images/logo-sao-paulo-256.png"
+                    src="src/assets/images/logo-santos-256.png"
                   />
                 </TeamScore__TeamLogo>
               </aside>

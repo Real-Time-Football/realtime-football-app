@@ -32,7 +32,7 @@ exports[`Team Score renders correctly 1`] = `
 
 <TeamScore
   side="HOME"
-  team="Sao Paulo"
+  team="São Paulo"
 >
   <TeamScore__TeamContainer
     data-side="HOME"
@@ -49,7 +49,7 @@ exports[`Team Score renders correctly 1`] = `
           className="c1"
         >
           <h1>
-            Sao Paulo
+            São Paulo
           </h1>
         </header>
       </TeamScore__TeamName>

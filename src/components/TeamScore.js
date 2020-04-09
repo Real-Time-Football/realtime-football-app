@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { getLogo } from './teamLogoHelper'
 
 const TeamLogo = styled.img`
     height: 60px;
@@ -29,7 +30,7 @@ const TeamScore = ({ team, score = 0, side }) => (
             <h1>{team}</h1>
         </TeamName>
         <aside>
-            <TeamLogo className="team-logo" src={'src/assets/images/logo-sao-paulo-256.png'} />
+            <TeamLogo className="team-logo" src={getLogo(team)} />
         </aside>
         <Score reverse={side === 'VISITORS'}>
             <strong>{score}</strong>
