@@ -1,275 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Score Board renders correctly 1`] = `
-.c8 {
-  background-color: #c70039;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-}
-
-.c3 {
-  height: 60px;
-  width: 60px;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c2 {
-  font-size: 20px;
-  margin: 0 20px 0 0;
-}
-
-.c6 {
-  font-size: 20px;
-  margin: 0 0 0 20px;
-}
-
-.c4 {
-  font-size: 38px;
-  margin: 0 10px 0 40px;
-}
-
-.c7 {
-  font-size: 38px;
-  margin: 0 40px 0 10px;
-}
-
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-family: Arial,Helvetica,sans-serif;
-  padding: 30px 0;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.c0:after {
+  content: ' ';
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 10px;
+  border-radius: 50%;
+  border: 3px solid #6495ed;
+  border-color: #6495ed transparent #6495ed transparent;
+  -webkit-animation: eoUyJr 1.2s linear infinite;
+  animation: eoUyJr 1.2s linear infinite;
 }
 
 <ScoreBoard>
-  <section>
-    <ScoreBoard__ScoreContainer>
-      <article
-        className="c0"
-      >
-        <TeamScore
-          score={0}
-          side="HOME"
-          team="São Paulo"
-        >
-          <TeamScore__TeamContainer
-            data-side="HOME"
-            reverse={false}
-          >
-            <article
-              className="c1"
-              data-side="HOME"
-            >
-              <TeamScore__TeamName
-                reverse={false}
-              >
-                <header
-                  className="c2"
-                >
-                  <h1>
-                    São Paulo
-                  </h1>
-                </header>
-              </TeamScore__TeamName>
-              <aside>
-                <TeamScore__TeamLogo
-                  className="team-logo"
-                  src="src/assets/images/logo-sao-paulo-256.png"
-                >
-                  <img
-                    className="c3 team-logo"
-                    src="src/assets/images/logo-sao-paulo-256.png"
-                  />
-                </TeamScore__TeamLogo>
-              </aside>
-              <TeamScore__Score
-                reverse={false}
-              >
-                <div
-                  className="c4"
-                >
-                  <strong>
-                    0
-                  </strong>
-                </div>
-              </TeamScore__Score>
-            </article>
-          </TeamScore__TeamContainer>
-        </TeamScore>
-        <div>
-          x
-        </div>
-        <TeamScore
-          reverse={true}
-          score={0}
-          side="VISITORS"
-          team="Santos"
-        >
-          <TeamScore__TeamContainer
-            data-side="VISITORS"
-            reverse={true}
-          >
-            <article
-              className="c5"
-              data-side="VISITORS"
-            >
-              <TeamScore__TeamName
-                reverse={true}
-              >
-                <header
-                  className="c6"
-                >
-                  <h1>
-                    Santos
-                  </h1>
-                </header>
-              </TeamScore__TeamName>
-              <aside>
-                <TeamScore__TeamLogo
-                  className="team-logo"
-                  src="src/assets/images/logo-santos-256.png"
-                >
-                  <img
-                    className="c3 team-logo"
-                    src="src/assets/images/logo-santos-256.png"
-                  />
-                </TeamScore__TeamLogo>
-              </aside>
-              <TeamScore__Score
-                reverse={true}
-              >
-                <div
-                  className="c7"
-                >
-                  <strong>
-                    0
-                  </strong>
-                </div>
-              </TeamScore__Score>
-            </article>
-          </TeamScore__TeamContainer>
-        </TeamScore>
-      </article>
-    </ScoreBoard__ScoreContainer>
-    <article>
-      <GoalButton
-        Button={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": -1154314,
-              "componentId": "GoalButton__DefaultButton-sc-1p08j1b-0",
-              "isStatic": false,
-              "rules": Array [
-                "background-color:#c70039;border:none;color:white;padding:15px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;",
-              ],
-              "staticRulesId": "",
-            },
-            "displayName": "GoalButton__DefaultButton",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "GoalButton__DefaultButton-sc-1p08j1b-0",
-            "target": "button",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        onClick={[Function]}
-      >
-        <GoalButton__DefaultButton
-          onClick={[Function]}
-        >
-          <button
-            className="c8"
-            onClick={[Function]}
-          >
-            Goal Home
-          </button>
-        </GoalButton__DefaultButton>
-      </GoalButton>
-      <GoalButton
-        Button={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": -1154314,
-              "componentId": "GoalButton__DefaultButton-sc-1p08j1b-0",
-              "isStatic": false,
-              "rules": Array [
-                "background-color:#c70039;border:none;color:white;padding:15px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;",
-              ],
-              "staticRulesId": "",
-            },
-            "displayName": "GoalButton__DefaultButton",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "GoalButton__DefaultButton-sc-1p08j1b-0",
-            "target": "button",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        onClick={[Function]}
-      >
-        <GoalButton__DefaultButton
-          onClick={[Function]}
-        >
-          <button
-            className="c8"
-            onClick={[Function]}
-          >
-            Goal Visitors
-          </button>
-        </GoalButton__DefaultButton>
-      </GoalButton>
-    </article>
-  </section>
+  <ScoreBoard__LoadingDualRing>
+    <div
+      className="c0"
+    />
+  </ScoreBoard__LoadingDualRing>
 </ScoreBoard>
 `;
