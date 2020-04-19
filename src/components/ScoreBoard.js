@@ -58,7 +58,8 @@ class ScoreBoard extends React.PureComponent {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8080/match/4e9ea4e7-007e-46c0-b738-924d62bff616')
+        const params = new URLSearchParams(location.search)
+        fetch('http://localhost:8080/match/' + params.get('match'))
             .then(res => res.json())
             .then(
                 result => {
