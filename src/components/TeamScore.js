@@ -27,13 +27,13 @@ const Score = styled.div`
 const TeamScore = ({ team, score = 0, side }) => (
     <TeamContainer data-side={side} reverse={side === 'VISITORS'}>
         <TeamName reverse={side === 'VISITORS'}>
-            <h1>{team}</h1>
+            <h1 data-testid="team-name-header">{team}</h1>
         </TeamName>
         <aside>
             <TeamLogo className="team-logo" src={getLogo(team)} />
         </aside>
         <Score reverse={side === 'VISITORS'}>
-            <strong>{score}</strong>
+            <strong data-testid="score-label">{score}</strong>
         </Score>
     </TeamContainer>
 )
