@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { getLogo, parseName } from './teamFunctions'
+import { parseTeamLogo, parseTeamName } from './matchHelpers'
 
 const DefaultTeamContainer = styled.article`
     display: flex;
@@ -27,10 +27,10 @@ const DefualtScore = styled.div`
 const TeamScore = ({ TeamContainer, TeamName, TeamLogo, Score, team, score = 0, side }) => (
     <TeamContainer data-side={side} reverse={side === 'VISITORS'}>
         <TeamName reverse={side === 'VISITORS'}>
-            <h1>{parseName(team)}</h1>
+            <h1>{parseTeamName(team)}</h1>
         </TeamName>
         <aside>
-            <TeamLogo className="team-logo" src={getLogo(team)} />
+            <TeamLogo className="team-logo" src={parseTeamLogo(team)} />
         </aside>
         <Score reverse={side === 'VISITORS'}>
             <strong>{score}</strong>

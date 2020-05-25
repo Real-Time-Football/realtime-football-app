@@ -4,7 +4,7 @@ import TeamScore from './TeamScore'
 import Loading from './Loading'
 import ErrorMessage from './ErrorMessage'
 import styled from 'styled-components'
-import { parsePeriod } from './matchFunctions'
+import { parseMatchPeriod } from './matchHelpers'
 
 const DefaultScoreContainer = styled.section`
     display: flex;
@@ -75,7 +75,7 @@ class ScoreBoard extends React.PureComponent {
                 <ScoreContainer>
                     <TeamScore side={'HOME'} team={teamHome} score={scoreHome}></TeamScore>
                     <Separator>X</Separator>
-                    <Stopwatch className="stopwatch">{parsePeriod(currentPeriod)}</Stopwatch>
+                    <Stopwatch className="stopwatch">{parseMatchPeriod(currentPeriod)}</Stopwatch>
                     <TeamScore side={'VISITORS'} team={teamVisitors} score={scoreVisitors} reverse={true}></TeamScore>
                 </ScoreContainer>
             )
