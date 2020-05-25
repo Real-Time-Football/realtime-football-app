@@ -12,10 +12,10 @@ This projects aims to implement the front-end of an Event Sourcing example appli
 
 ## Storybook
 
-https://real-time-football.github.io/football-scoring-app/
+<https://real-time-football.github.io/football-scoring-app/>
 
 ## How to run
 
-```
+```bash
 npm run dev
 ```
