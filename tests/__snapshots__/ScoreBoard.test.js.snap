@@ -20,11 +20,81 @@ exports[`Score Board renders correctly 1`] = `
   animation: eoUyJr 1.2s linear infinite;
 }
 
-<ScoreBoard>
-  <ScoreBoard__LoadingDualRing>
+<ScoreBoard
+  ScoreContainer={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "baseHash": -73836927,
+        "componentId": "ScoreBoard__DefaultScoreContainer-sc-1y8kceb-0",
+        "isStatic": false,
+        "rules": Array [
+          "display:flex;justify-content:center;align-items:center;font-family:Arial,Helvetica,sans-serif;padding:30px 0;",
+        ],
+        "staticRulesId": "",
+      },
+      "displayName": "ScoreBoard__DefaultScoreContainer",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "ScoreBoard__DefaultScoreContainer-sc-1y8kceb-0",
+      "target": "section",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  Separator={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "baseHash": 1599740690,
+        "componentId": "ScoreBoard__DefaultSeparator-sc-1y8kceb-1",
+        "isStatic": false,
+        "rules": Array [
+          "font-size:14px;font-style:weigth;color:#999;",
+        ],
+        "staticRulesId": "",
+      },
+      "displayName": "ScoreBoard__DefaultSeparator",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "ScoreBoard__DefaultSeparator-sc-1y8kceb-1",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  Stopwatch={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "baseHash": 1312350813,
+        "componentId": "ScoreBoard__DefaultStopwatch-sc-1y8kceb-2",
+        "isStatic": false,
+        "rules": Array [
+          "font-size:14px;color:#555;position:absolute;margin-top:40px;margin-left:-7px;",
+        ],
+        "staticRulesId": "",
+      },
+      "displayName": "ScoreBoard__DefaultStopwatch",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "ScoreBoard__DefaultStopwatch-sc-1y8kceb-2",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+>
+  <Loading>
     <div
       className="c0"
     />
-  </ScoreBoard__LoadingDualRing>
+  </Loading>
 </ScoreBoard>
 `;

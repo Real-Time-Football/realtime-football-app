@@ -1,9 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import TeamScore from './TeamScore'
-import styled, { keyframes } from 'styled-components'
+import Loading from './Loading'
+import ErrorMessage from './ErrorMessage'
+import styled from 'styled-components'
 import { parsePeriod } from './matchFunctions'
 
-const ScoreContainer = styled.article`
+const DefaultScoreContainer = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,52 +14,13 @@ const ScoreContainer = styled.article`
     padding: 30px 0;
 `
 
-const ErrorContainer = styled.div`
-    font-family: Arial, Helvetica, sans-serif;
-    color: #721c24;
-    background-color: #f8d7da;
-    position: relative;
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    border: 1px solid #f5c6cb;
-    border-radius: 5px;
-`
-
-const dualRingRotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`
-
-const LoadingDualRing = styled.div`
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-
-    &:after {
-        content: ' ';
-        display: block;
-        width: 32px;
-        height: 32px;
-        margin: 10px;
-        border-radius: 50%;
-        border: 3px solid #6495ed;
-        border-color: #6495ed transparent #6495ed transparent;
-        animation: ${dualRingRotate} 1.2s linear infinite;
-    }
-`
-
-const Separator = styled.div`
+const DefaultSeparator = styled.div`
     font-size: 14px;
     font-style: weigth;
     color: #999;
 `
 
-const Stopwatch = styled.div`
+const DefaultStopwatch = styled.div`
     font-size: 14px;
     color: #555;
     position: absolute;
@@ -100,33 +64,35 @@ class ScoreBoard extends React.PureComponent {
 
     render() {
         const { error, isLoaded, scoreHome, scoreVisitors, teamHome, teamVisitors, currentPeriod } = this.state
+        const { ScoreContainer, Stopwatch, Separator } = this.props
 
         if (this.state.error) {
-            return (
-                <ErrorContainer>
-                    <strong>Error:</strong> {error.message}
-                </ErrorContainer>
-            )
+            return <ErrorMessage message={error.message}></ErrorMessage>
         } else if (!isLoaded) {
-            return <LoadingDualRing></LoadingDualRing>
+            return <Loading></Loading>
         } else {
             return (
-                <section>
-                    <ScoreContainer>
-                        <TeamScore side={'HOME'} team={teamHome} score={scoreHome}></TeamScore>
-                        <Separator>X</Separator>
-                        <Stopwatch className="stopwatch">{parsePeriod(currentPeriod)}</Stopwatch>
-                        <TeamScore
-                            side={'VISITORS'}
-                            team={teamVisitors}
-                            score={scoreVisitors}
-                            reverse={true}
-                        ></TeamScore>
-                    </ScoreContainer>
-                </section>
+                <ScoreContainer>
+                    <TeamScore side={'HOME'} team={teamHome} score={scoreHome}></TeamScore>
+                    <Separator>X</Separator>
+                    <Stopwatch className="stopwatch">{parsePeriod(currentPeriod)}</Stopwatch>
+                    <TeamScore side={'VISITORS'} team={teamVisitors} score={scoreVisitors} reverse={true}></TeamScore>
+                </ScoreContainer>
             )
         }
     }
+}
+
+ScoreBoard.propTypes = {
+    ScoreContainer: PropTypes.elementType,
+    Stopwatch: PropTypes.elementType,
+    Separator: PropTypes.elementType,
+}
+
+ScoreBoard.defaultProps = {
+    ScoreContainer: DefaultScoreContainer,
+    Stopwatch: DefaultStopwatch,
+    Separator: DefaultSeparator,
 }
 
 export default ScoreBoard

@@ -37,10 +37,6 @@ describe('Score Board', () => {
         done()
     })
 
-    it('render a <section>', () => {
-        expect(wrapper.type()).toBe('section')
-    })
-
     it('update state `scoreHome` to 2', () => {
         expect(wrapper.state('scoreHome')).toBe(2)
     })
@@ -59,10 +55,6 @@ describe('Score Board', () => {
 
     it('update state `currentPeriod` to `1º Tempo`', () => {
         expect(wrapper.state('currentPeriod')).toBe('FIRST_PERIOD')
-    })
-
-    it('renders current period in stopwatch component', () => {
-        expect(wrapper.find('.stopwatch').text()).toBe('1º Tempo')
     })
 
     it('renders the current score home in a TeamScore', () => {
@@ -104,6 +96,10 @@ describe('Score Board', () => {
             .at(1)
             .prop('team')
         expect(teamName).toBe(name)
+    })
+
+    it('renders current period in a styled component named stopwatch', () => {
+        expect(wrapper.find('.stopwatch').text()).toBe('1º Tempo')
     })
 
     it('renders correctly', () => {
