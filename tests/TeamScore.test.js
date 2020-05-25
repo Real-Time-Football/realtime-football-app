@@ -4,7 +4,8 @@ import TeamScore from '../src/components/TeamScore'
 
 describe('Team Score', () => {
     let wrapper
-    const team = 'São Paulo'
+    const team = 'SAO_PAULO'
+    const teamName = 'São Paulo'
     const side = 'HOME'
 
     beforeEach(() => {
@@ -12,7 +13,7 @@ describe('Team Score', () => {
     })
 
     it('passes `team` through to the <header>', () => {
-        expect(wrapper.childAt(0).text()).toBe(team)
+        expect(wrapper.childAt(0).text()).toBe(teamName)
     })
 
     it('passes `score` through to the <div>', () => {

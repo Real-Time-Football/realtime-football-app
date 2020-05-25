@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { getLogo } from './teamLogoHelper'
+import { getLogo, parseName } from './teamFunctions'
 
 const TeamLogo = styled.img`
     height: 60px;
@@ -27,7 +27,7 @@ const Score = styled.div`
 const TeamScore = ({ team, score = 0, side }) => (
     <TeamContainer data-side={side} reverse={side === 'VISITORS'}>
         <TeamName reverse={side === 'VISITORS'}>
-            <h1>{team}</h1>
+            <h1>{parseName(team)}</h1>
         </TeamName>
         <aside>
             <TeamLogo className="team-logo" src={getLogo(team)} />

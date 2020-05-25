@@ -13,8 +13,17 @@ describe('Score Board', () => {
                 status: 200,
                 json: () =>
                     Promise.resolve({
-                        homeScore: 2,
-                        visitorsScore: 1,
+                        home: {
+                            name: 'Palmeiras',
+                        },
+                        visitors: {
+                            name: 'Corinthians',
+                        },
+                        score: {
+                            home: 2,
+                            visitors: 1,
+                        },
+                        currentPeriod: 'FIRST_PERIOD',
                     }),
             })
         )
@@ -40,6 +49,22 @@ describe('Score Board', () => {
         expect(wrapper.state('scoreVisitors')).toBe(1)
     })
 
+    it('update state `teamHome` to Palmeiras', () => {
+        expect(wrapper.state('teamHome')).toBe('Palmeiras')
+    })
+
+    it('update state `teamVisitors` to Corinthians', () => {
+        expect(wrapper.state('teamVisitors')).toBe('Corinthians')
+    })
+
+    it('update state `currentPeriod` to `1º Tempo`', () => {
+        expect(wrapper.state('currentPeriod')).toBe('FIRST_PERIOD')
+    })
+
+    it('renders current period in stopwatch component', () => {
+        expect(wrapper.find('.stopwatch').text()).toBe('1º Tempo')
+    })
+
     it('renders the current score home in a TeamScore', () => {
         wrapper.setState({ scoreHome: 1 })
         console.log(wrapper)
@@ -57,6 +82,28 @@ describe('Score Board', () => {
             .at(1)
             .prop('score')
         expect(teamVisitorsScore).toBe(2)
+    })
+
+    it('renders the home team name in a TeamScore', () => {
+        let name = 'São Paulo'
+        wrapper.setState({ teamHome: name })
+        console.log(wrapper)
+        const teamName = wrapper
+            .find('TeamScore')
+            .at(0)
+            .prop('team')
+        expect(teamName).toBe(name)
+    })
+
+    it('renders the visitors team name in a TeamScore', () => {
+        let name = 'Santos'
+        wrapper.setState({ teamVisitors: name })
+        console.log(wrapper)
+        const teamName = wrapper
+            .find('TeamScore')
+            .at(1)
+            .prop('team')
+        expect(teamName).toBe(name)
     })
 
     it('renders correctly', () => {

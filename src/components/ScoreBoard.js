@@ -1,6 +1,7 @@
 import React from 'react'
 import TeamScore from './TeamScore'
 import styled, { keyframes } from 'styled-components'
+import { parsePeriod } from './matchFunctions'
 
 const ScoreContainer = styled.article`
     display: flex;
@@ -49,12 +50,29 @@ const LoadingDualRing = styled.div`
     }
 `
 
+const Separator = styled.div`
+    font-size: 14px;
+    font-style: weigth;
+    color: #999;
+`
+
+const Stopwatch = styled.div`
+    font-size: 14px;
+    color: #555;
+    position: absolute;
+    margin-top: 40px;
+    margin-left: -7px;
+`
+
 class ScoreBoard extends React.PureComponent {
     state = {
         error: null,
         isLoaded: false,
         scoreHome: 0,
         scoreVisitors: 0,
+        teamHome: 'Casa',
+        teamVisitors: 'Visitante',
+        currentPeriod: null,
     }
 
     componentDidMount() {
@@ -62,9 +80,16 @@ class ScoreBoard extends React.PureComponent {
         fetch('http://localhost:8080/match/' + params.get('match'))
             .then(res => res.json())
             .then(
-                result => {
-                    this.setState({ isLoaded: true, scoreHome: result.homeScore, scoreVisitors: result.visitorsScore })
-                    console.log('match: ', result)
+                match => {
+                    this.setState({
+                        isLoaded: true,
+                        scoreHome: match.score.home,
+                        scoreVisitors: match.score.visitors,
+                        teamHome: match.home.name,
+                        teamVisitors: match.visitors.name,
+                        currentPeriod: match.currentPeriod,
+                    })
+                    console.log('match: ', match)
                 },
                 error => {
                     this.setState({ isLoaded: false, error })
@@ -74,7 +99,7 @@ class ScoreBoard extends React.PureComponent {
     }
 
     render() {
-        const { error, isLoaded, scoreHome, scoreVisitors } = this.state
+        const { error, isLoaded, scoreHome, scoreVisitors, teamHome, teamVisitors, currentPeriod } = this.state
 
         if (this.state.error) {
             return (
@@ -88,9 +113,15 @@ class ScoreBoard extends React.PureComponent {
             return (
                 <section>
                     <ScoreContainer>
-                        <TeamScore side={'HOME'} team={'São Paulo'} score={scoreHome}></TeamScore>
-                        <div>x</div>
-                        <TeamScore side={'VISITORS'} team={'Santos'} score={scoreVisitors} reverse={true}></TeamScore>
+                        <TeamScore side={'HOME'} team={teamHome} score={scoreHome}></TeamScore>
+                        <Separator>X</Separator>
+                        <Stopwatch className="stopwatch">{parsePeriod(currentPeriod)}</Stopwatch>
+                        <TeamScore
+                            side={'VISITORS'}
+                            team={teamVisitors}
+                            score={scoreVisitors}
+                            reverse={true}
+                        ></TeamScore>
                     </ScoreContainer>
                 </section>
             )
