@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Team Score renders correctly 1`] = `
-.c2 {
-  height: 60px;
-  width: 60px;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -20,6 +15,11 @@ exports[`Team Score renders correctly 1`] = `
   align-items: center;
 }
 
+.c2 {
+  height: 60px;
+  width: 60px;
+}
+
 .c1 {
   font-size: 20px;
   margin: 0 20px 0 0;
@@ -31,10 +31,108 @@ exports[`Team Score renders correctly 1`] = `
 }
 
 <TeamScore
+  Score={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "baseHash": -1988318188,
+        "componentId": "TeamScore__DefualtScore-sc-1h0nwh1-3",
+        "isStatic": false,
+        "rules": Array [
+          "font-size:38px;margin:",
+          [Function],
+          ";",
+        ],
+        "staticRulesId": "",
+      },
+      "displayName": "TeamScore__DefualtScore",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "TeamScore__DefualtScore-sc-1h0nwh1-3",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  TeamContainer={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "baseHash": -1021372219,
+        "componentId": "TeamScore__DefaultTeamContainer-sc-1h0nwh1-0",
+        "isStatic": false,
+        "rules": Array [
+          "display:flex;flex-direction:",
+          [Function],
+          ";align-items:center;",
+        ],
+        "staticRulesId": "",
+      },
+      "displayName": "TeamScore__DefaultTeamContainer",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "TeamScore__DefaultTeamContainer-sc-1h0nwh1-0",
+      "target": "article",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  TeamLogo={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "baseHash": -1609124696,
+        "componentId": "TeamScore__DefaultTeamLogo-sc-1h0nwh1-1",
+        "isStatic": false,
+        "rules": Array [
+          "height:60px;width:60px;",
+        ],
+        "staticRulesId": "",
+      },
+      "displayName": "TeamScore__DefaultTeamLogo",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "TeamScore__DefaultTeamLogo-sc-1h0nwh1-1",
+      "target": "img",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  TeamName={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "baseHash": -1630724313,
+        "componentId": "TeamScore__DefaultTeamName-sc-1h0nwh1-2",
+        "isStatic": false,
+        "rules": Array [
+          "font-size:20px;margin:",
+          [Function],
+          ";",
+        ],
+        "staticRulesId": "",
+      },
+      "displayName": "TeamScore__DefaultTeamName",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "TeamScore__DefaultTeamName-sc-1h0nwh1-2",
+      "target": "header",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
   side="HOME"
   team="SAO_PAULO"
 >
-  <TeamScore__TeamContainer
+  <TeamScore__DefaultTeamContainer
     data-side="HOME"
     reverse={false}
   >
@@ -42,7 +140,7 @@ exports[`Team Score renders correctly 1`] = `
       className="c0"
       data-side="HOME"
     >
-      <TeamScore__TeamName
+      <TeamScore__DefaultTeamName
         reverse={false}
       >
         <header
@@ -52,9 +150,9 @@ exports[`Team Score renders correctly 1`] = `
             São Paulo
           </h1>
         </header>
-      </TeamScore__TeamName>
+      </TeamScore__DefaultTeamName>
       <aside>
-        <TeamScore__TeamLogo
+        <TeamScore__DefaultTeamLogo
           className="team-logo"
           src="src/assets/images/logo-sao-paulo-256.png"
         >
@@ -62,9 +160,9 @@ exports[`Team Score renders correctly 1`] = `
             className="c2 team-logo"
             src="src/assets/images/logo-sao-paulo-256.png"
           />
-        </TeamScore__TeamLogo>
+        </TeamScore__DefaultTeamLogo>
       </aside>
-      <TeamScore__Score
+      <TeamScore__DefualtScore
         reverse={false}
       >
         <div
@@ -74,8 +172,8 @@ exports[`Team Score renders correctly 1`] = `
             0
           </strong>
         </div>
-      </TeamScore__Score>
+      </TeamScore__DefualtScore>
     </article>
-  </TeamScore__TeamContainer>
+  </TeamScore__DefaultTeamContainer>
 </TeamScore>
 `;
